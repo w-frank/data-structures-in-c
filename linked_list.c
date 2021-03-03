@@ -10,11 +10,11 @@
  * |data|next| -> |data|next| -> |data|next| -> NULL
  *
  * Operations:
- * - Insert node at nth position in list
- * - Delete node at nth position in list
- * - TODO: Delete nodes in list with a particular value
- * - Print all nodes in list
- * - Print all nodes in list in reverse (recursion)
+ * - Insert node at nth position in linked list
+ * - Delete node at nth position in linked list
+ * - TODO: Delete nodes in linked list with a particular value
+ * - Print all nodes in linked list
+ * - Print all nodes in linked list in reverse (recursion)
  *
  */
 
@@ -100,8 +100,8 @@ void insert_node(node_t** head_node_ptr, int data, int position) {
 /**
  * @brief Delete an existing node from @p position in a linked list.
  *
- * @param head_node_ptr A pointer to a pointer to the head of the linked list.
- * @param position The position in the list of the node to be deleted.
+ * @param head_node_ptr Pointer to a pointer to the head of the linked list.
+ * @param position Position in the list of the node to be deleted.
  */
 void delete_node(node_t** head_node_ptr, int position) {
 
@@ -110,7 +110,7 @@ void delete_node(node_t** head_node_ptr, int position) {
     // If deleting existing head node
     if (position == 1) {
         *head_node_ptr = node_ptr_1->next_node; // update head pointer to second node
-        free(node_ptr_1);                     // free memory of existing head node
+        free(node_ptr_1);                       // free memory of existing head node
         return;
     }
     // Else start by finding node at position-1
@@ -126,8 +126,8 @@ void delete_node(node_t** head_node_ptr, int position) {
 /**
  * @brief Reverse the nodes in a linked list.
  *
- * @param head_node_ptr A pointer to a pointer to the head of the linked list.
- * @param position The position in the list of the node to be deleted.
+ * @param head_node_ptr Pointer to a pointer to the head of the linked list.
+ * @param position Position in the list of the node to be deleted.
  */
 void reverse_list(node_t** head_node_ptr) {
     node_t* current_node = *head_node_ptr;
@@ -147,9 +147,9 @@ void reverse_list(node_t** head_node_ptr) {
 /**
  * @brief Reverse the nodes in a linked list (recursive).
  *
- * @param current_node  A pointer to the current node (initially the head)
- * @param prev_node     A pointer to the previous node (initially NULL)
- * @param head_node_ptr A pointer to a pointer to the head of the linked list.
+ * @param current_node  Pointer to the current node (initially the head)
+ * @param prev_node     Pointer to the previous node (initially NULL)
+ * @param head_node_ptr Pointer to a pointer to the head of the linked list.
  */
 void reverse_list_recursive(node_t* current_node, node_t* prev_node, node_t** head_node_ptr) {
 
@@ -175,7 +175,7 @@ void reverse_list_recursive(node_t* current_node, node_t* prev_node, node_t** he
 /**
  * @brief Print the data values of all nodes in a linked list.
  *
- * @param head_node A pointer to the head node of the list to be printed.
+ * @param head_node Pointer to the head node of the list to be printed.
  */
 void print_nodes(node_t* head_node) {
     node_t* current_node = head_node; // start at the head node
@@ -197,8 +197,8 @@ void print_nodes(node_t* head_node) {
 /**
  * @brief Print the data values of all nodes in a linked list (recursive).
  *
- * @param current_node A pointer to the current node to be printed (initially the head node).
- * @param reverse      Option to print linked list nodes in reverse (true=reversed, false=forward)
+ * @param current_node Pointer to the current node to be printed (initially the head node).
+ * @param reverse      Option to print nodes in reverse (true=reversed, false=forward)
  */
 void print_nodes_recursive(node_t* current_node, bool reverse) {
     // If list is empty or ar the end of the list
